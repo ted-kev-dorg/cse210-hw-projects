@@ -1,3 +1,12 @@
+/*
+  EXCEEDING REQUIREMENTS:
+  To exceed the core assignment requirements, I added a new piece of information 
+  to the journal entry tracking: the user's current mood. When writing an entry, 
+  the program prompts the user to input how they are feeling (e.g., Happy, Tired, Stressed). 
+  This extra attribute is properly stored in the Entry class, displayed 
+  to the user screen, and successfully saved and loaded from text files.
+*/
+
 using System;
 using System.Security.Cryptography.X509Certificates;
 
