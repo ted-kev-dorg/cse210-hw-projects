@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+public class Order
+{
+    private List<Product> _products = new List<Product>();
+    private Customer _customer;
+
+    public Order(Customer customer)
+    {
+        _customer = customer;
+    }
+
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+    }
+
+    public double GetTotalCost()
+    {
+        double total = 0;
+
+        foreach (Product product in _products)
+        {
+            total += product.GetTotalCost();
+        }
+
+        // Add shipping fee based on customer's country location
+        double shippingCost = _customer.IsInUSA() ? 5.00 : 35.00;
+        total += shippingCost;
+
+        return total;
+    }
+
+    public string GetPackingLabel()
+    {
+        string label = "PACKING LABEL:\n";
+        foreach (Product product in _products)
+        {
+            label += $" - Product: {product.GetName()} (ID: {product.GetProductId()})\n";
+        }
+        return label;
+    }
+
+    public string GetShippingLabel()
+    {
+        string label = "SHIPPING LABEL:\n";
+        label += $"{_customer.GetName()}\n";
+        label += _customer.GetAddress().GetFormattedAddress() + "\n";
+        return label;
+    }
+}
