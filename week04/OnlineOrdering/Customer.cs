@@ -11,7 +11,7 @@ public class Customer
 
     public bool IsInUSA()
     {
-        // Encapsulation: Delegates the check directly to the Address object
+        
         return _address.IsInUSA();
     }
 
