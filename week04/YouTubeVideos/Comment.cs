@@ -2,11 +2,12 @@ using System;
 
 public class Comment
 {
-    public string name;
-    public string text;
+    // Member variables updated to use _underscoreCamelCase
+    public string _name;
+    public string _text;
 
     public void Display()
     {
-        Console.WriteLine($"  - {name}: \"{text}\"");
+        Console.WriteLine($"  - {_name}: \"{_text}\"");
     }
 }
